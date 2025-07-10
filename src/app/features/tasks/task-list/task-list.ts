@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-task-list',
@@ -18,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
   ],
   templateUrl: './task-list.html',
   styleUrl: './task-list.css',

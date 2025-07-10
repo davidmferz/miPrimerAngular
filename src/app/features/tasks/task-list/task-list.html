@@ -3,10 +3,16 @@
 
   <mat-list role="list">
     @for(task of tasks; track task.id){
-    <mat-list-item role="listitem" class="task-item">
-      <h3 matLine>{{ task.title }}</h3>
-    </mat-list-item>
+    <mat-card class="task-card col-6">
+      <mat-list-item role="listitem" class="task-item">
+        <h3 matLine>{{ task.title }}</h3>
+      </mat-list-item>
+    </mat-card>
     }
   </mat-list>
+
+  <div class="row">
+    <div class="col-6">text 1</div>
+    <div class="col-6">text 2</div>
+  </div>
 </div>
-|
