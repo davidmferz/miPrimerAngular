@@ -1,30 +1,25 @@
-import { Injectable } from '@angular/core';
-
-export interface interfaceTareas {
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+//src/app/services/tareas.ts
+export interface Task {
+  userId: number;
   id: number;
-  titulo: string;
-  descripcion: string;
-  completada: boolean;
-  hora: string;
+  title: string;
+  completed: boolean;
 }
 
 @Injectable({
   providedIn: 'root',
 })
-export class Tarea {
-  private tareas: interfaceTareas[] = [
-    {
-      id: 1,
-      titulo: 'Tarea 1',
-      descripcion: 'Descripción de la tarea 1',
-      completada: false,
-      hora: '08:00',
-    },
-  ];
+export class TareasService {
+  private http = inject(HttpClient);
+  private apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+
   constructor() {}
 
   //obtener todas las tareas
-  getTareas(): interfaceTareas[] {
-    return this.tareas;
+  getTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>(`${this.apiUrl}?_limit=10`);
   }
 }
