@@ -3,6 +3,7 @@ import { MainLayaout } from './layout/main-layaout/main-layaout';
 import { Dashboard } from './features/dashboard/dashboard';
 import { TaskListComponent } from './features/tasks/task-list/task-list';
 import { ImagenesComponent } from './imagenes-component/imagenes-component';
+import { TableComponent } from './table-component/table-component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,7 @@ export const routes: Routes = [
       { path: 'dashboard', component: Dashboard },
       { path: 'tareas', component: TaskListComponent },
       { path: 'imagen', component: ImagenesComponent },
+      { path: 'table', component: TableComponent },
     ],
   },
 ];
