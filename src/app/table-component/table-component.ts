@@ -15,15 +15,15 @@ export class TableComponent implements OnInit {
   private tareasServices = inject(TareasService);
   public ELEMENT_DATA: Data[] = [];
   displayedColumns: string[] = ['postId', 'id', 'name', 'email', 'body'];
-  dataSource = this.ELEMENT_DATA;
+  dataSource: Data[] = [];
 
   ngOnInit(): void {
     this.getData();
   }
 
   getData() {
-    this.tareasServices.getTable().subscribe((d) => {
-      this.ELEMENT_DATA = d;
+    this.tareasServices.getTable().subscribe((d: Data[]) => {
+      this.dataSource = d;
     });
   }
 }
